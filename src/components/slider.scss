@@ -1,0 +1,191 @@
+@import "./media-mixins.scss";
+
+.slider {
+  position: relative;
+  &__wrapper {
+    display: flex;
+    position: relative;
+    height: 500px;
+    overflow-x: hidden;
+  }
+  &__dots {
+    display: flex;
+    justify-content: center;
+    margin: 35px auto;
+  }
+  &__single-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #bebfb9;
+    &--active {
+      background-color: #3a1be5;
+    }
+  }
+  &__arrow {
+    display: none;
+    position: absolute;
+    width: 48px;
+    height: 36px;
+    top: 45%;
+    z-index: 10;
+    cursor: pointer;
+    &--right {
+      right: 20px
+    }
+    &--left {
+      left: 20px
+    }
+    &--inactive {
+      opacity: 0.2;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@include tablet() {
+  .slider {
+    background-color: #000
+    &__wrapper {
+      height: 800px;
+    }
+    &__dots {
+      display: none;
+    }
+    &__arrow {
+      display: block;
+    }
+  }
+}
+@include desktop-lowres() {
+  .slider {
+    &__wrapper {
+      height: 750px;
+    }
+    &__arrow {
+      width: 78px;
+      height: 60px;
+      &--right {
+        right: 80px
+      }
+      &--left {
+        left: 80px
+      }
+    }
+  }
+}
+
+@include desktop-lg() {
+  .slider {
+    &__wrapper {
+      height: 750px;
+    }
+    &__arrow {
+      width: 78px;
+      height: 60px;
+      &--right {
+        right: 320px
+      }
+      &--left {
+        left: 320px
+      }
+    }
+  }
+}
+
+
+//// Single slide
+
+.single-slide {
+  position: absolute;
+  width: 100vw;
+  &--slider {
+    height: 500px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  &--case { 
+    height: 100%;
+  }
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 100vw;
+
+  }
+  .gatsby-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    picture {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        //Overwrite gatsby-image styles
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex;
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .single-slide {
+    &--slider {
+      height: 800px;
+      width: 100vw;
+    }
+    &__wrapper {
+      width: 100vw;
+    }
+    .gatsby-image-wrapper {
+      picture {
+        img {
+          width: 75% !important;
+          height: 90% !important;
+          object-fit: contain !important;
+        }
+      }
+    }
+  }
+}
+
+@include desktop-lowres() {
+  .single-slide {
+    &--slider {
+      height: 750px;
+      
+    }
+
+    .gatsby-image-wrapper {
+      picture {
+        img {
+          width: 50% !important;
+          height: 85% !important;
+          object-fit: contain !important;
+        }
+      }
+    }
+  }
+}

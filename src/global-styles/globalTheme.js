@@ -2,9 +2,10 @@ import { DefaultTheme } from "styled-components";
 
 export const theme = {
   colors: {
-    primary: '#BEB68B',
-    // primaryDark: '#27344E',
-    // secondary: '#68728C',
+    primary: '#FEE715',
+    primaryDark: '#FFB408',
+    primary2: '#E8BB07',
+    secondary: '#101820',
   },
   fonts: ["arial", "Roboto"],
   defaultGradients: {

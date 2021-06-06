@@ -41,12 +41,11 @@ const SingleItemTitleText = styled.p`
 `
 
 export default function ServiceComponent({ data }) {
-  console.log(data)
   const { title, servicesRepeater } = data
   return (
     <section style={{ display: 'flex', flexWrap: 'wrap' }}>
       <h3 style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>{title}</h3>
-      {servicesRepeater.map(item => <SingleService>
+      {servicesRepeater.map(item => <SingleService key={item.title}>
         <SingleItemTitle>{item.title}</SingleItemTitle>
         <SingleItemTitleBorder />
         <SingleItemTitleText>{item.text}</SingleItemTitleText>

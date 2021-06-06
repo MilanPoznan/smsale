@@ -55,7 +55,6 @@ export const BackgroundVideo = styled.video`
     object-position: center;
     opacity: 0;
     animation: ${showElement} 0.3s 1.2s forwards;
-
 `;
 
 export const AnimatedBGContainer = styled.div`
@@ -64,7 +63,7 @@ export const AnimatedBGContainer = styled.div`
   bottom: 0;
   right:  0;
   height: 100%;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.primary2};
   animation: ${showAnimatedContainer} 1s 0.4s forwards,
   ${hideAnimatedContainer} 1s 2s forwards;
   z-index: 5;
@@ -76,13 +75,16 @@ export const LogoContainer = styled.div`
 	top: 50%;
 	left: 50%;
   color: white;
-  font-size: 40px;
+  font-size: 64px;
+  font-weight: bold;
 	transform: translate(-50%, -50%);
   opacity: 0;
   animation: ${showElement} 1.6s 0.5s;
   z-index: 10;
-
+  color: ${({ theme }) => theme.colors.secondary};
+  font-family: Arial, Helvetica, sans-serif;
 `
+
 export const BgOverlay = styled.div`
  position: absolute;
   top: 0;

@@ -20,15 +20,15 @@ export default function pageTemplate({ data }) {
         {pageContent.pageFlexibleContent.map((item, index) => {
           switch (item.fieldGroupName) {
             case 'page_Pagecontent_PageFlexibleContent_VideoComponent':
-              return <Video data={item} />
+              return <Video data={item} key={index} />
             case 'page_Pagecontent_PageFlexibleContent_TextComponent':
-              return <TextComponent data={item} />
+              return <TextComponent data={item} key={index} />
             case 'page_Pagecontent_PageFlexibleContent_FullImage':
-              return <FullImage data={item} />
+              return <FullImage data={item} key={index} />
             case 'page_Pagecontent_PageFlexibleContent_ServicesComponent':
-              return <ServiceComponent data={item} />
+              return <ServiceComponent data={item} key={index} />
             case 'page_Pagecontent_PageFlexibleContent_Gallery':
-              return <GalleryComponent data={item} />
+              return <GalleryComponent data={item} key={index} />
             default:
               break;
           }
@@ -73,7 +73,7 @@ export const defPageQuery = graphql`
             image {
               localFile {
                 childImageSharp {
-                  fluid {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -97,7 +97,7 @@ export const defPageQuery = graphql`
               altText
               localFile {
                 childImageSharp {
-                  fluid {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
