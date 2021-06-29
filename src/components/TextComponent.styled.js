@@ -28,7 +28,7 @@ p {
   }
 
 
-@media(min-width: ${size.laptop}) {
+@media(min-width: ${size.desktop}) {
   flex-flow: row;
   margin: 60px auto;
   max-width: 1060px;

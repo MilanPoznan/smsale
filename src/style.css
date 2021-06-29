@@ -333,3 +333,9 @@ a:focus {
     list-style-position: inside;
   }
 }
+/* Animated text */
+.animated-text {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .6s ease-in-out;
+}
