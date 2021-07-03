@@ -9,12 +9,14 @@ import { useCurrentWidth } from '../hooks/useResize'
 const SingleServicesWrapp = styled.div`
   display: flex;
   flex-flow: column;
+  margin: 40px auto 80px;
   @media ${device.tablet} {
     flex-flow: row;
   }
 `
 
 const SingleService = styled.div`
+  position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -54,29 +56,30 @@ export default function ServiceComponent({ data }) {
   const titleRef = useRef()
   const textRef = useRef()
   const elementArray = useRef([])
-  console.log(servicesRepeater)
-  // const windowWidth = useCurrentWidth();
+
 
   const properties = [
     ['opacity', 1],
     ['transform', `translate(0px)`]
   ];
 
-  const [headlinesRef, headlinesEntry] = useIntersect({
-    rootMargin: '0px 0px 0px',
-    threshold: 0.1
+  const [ref, entry] = useIntersect({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7
   })
 
   // useAnimateElement(elementArray.current, properties, headlinesEntry.isIntersecting);
+  // useAnimateElement(elementArray, properties, entry.isIntersecting)
 
 
   return (
-    <section style={{ display: 'flex', flexWrap: 'wrap' }} ref={headlinesRef}>
+    <section style={{ display: 'flex', flexWrap: 'wrap' }} ref={ref}>
       <h3 style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>{title}</h3>
 
       <SingleServicesWrapp>
 
-        {servicesRepeater.map((item, index) => <SingleService key={item.title} ref={(element) => elementArray.current[index] = element} >
+        {servicesRepeater.map((item, index) => <SingleService isInView={entry.isIntersecting} key={item.title} ref={(element) => elementArray.current[index] = element} >
           <SingleItemTitle ref={titleRef}>{item.title}</SingleItemTitle>
           <SingleItemTitleBorder />
           <SingleItemTitleText ref={textRef}>{item.text}</SingleItemTitleText>

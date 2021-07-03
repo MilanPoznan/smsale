@@ -1,24 +1,36 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { TextComponentSection } from './TextComponent.styled'
+
 import useIntersect from '../hooks/useIntersect'
+import useAnimateElement from '../hooks/useAnimateElement'
+
 export default function TextComponent({ data }) {
 
-  const [isInView, setIsInView] = useState(true)
+  const element = useRef(null);
+  const [shouldAnimated, setShouldAnimated] = useState(false)
 
-  const [textComponentElement, headlinesEntry] = useIntersect({
-    rootMargin: '0px 0px 0px',
-    threshold: 0.8
+  const properties = [
+    ['opacity', 1],
+    ['transform', `translate(0px)`]
+  ];
+
+  const [ref, entry] = useIntersect({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7
   })
+
+  useAnimateElement(element.current, properties, entry.isIntersecting)
+
 
   useEffect(() => {
-    // headlinesEntry.isIntersecting && setIsInView(true)
-    // console.log(1)
-  })
+    !shouldAnimated && entry.isIntersecting && setShouldAnimated(true)
+  }, [entry.isIntersecting])
 
   return (
-    <TextComponentSection ref={textComponentElement} isInView={isInView}>
-      <h1>{data.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: data.text }} />
+    <TextComponentSection isInView={shouldAnimated} ref={ref}>
+      <h1 className="animated-title">{data.title}</h1>
+      <div ref={element} className="animated-text" dangerouslySetInnerHTML={{ __html: data.text }} />
     </TextComponentSection>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { size } from '../global-styles/device'
+import { size, device } from '../global-styles/device'
 const showAnimatedContainer = keyframes`
   0% { width: 0%; }
   100% { width: 100%;  }
@@ -23,7 +23,7 @@ export const BackgroundVideoWrapper = styled.div`
   height: 100%;
   overflow: hidden;
 
-  @media (min-width: ${size.desktop}) {
+  @media ${device.laptop} {
     max-height: 80vh;
     height: 80vh;
   }
@@ -35,7 +35,7 @@ export const VideoSection = styled.section`
   height: 50vh;
   
 
-  @media (min-width: ${size.desktop}) {
+  @media ${device.laptop} {
     max-height: 80vh;
     height: 80vh;
   }
