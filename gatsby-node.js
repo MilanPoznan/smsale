@@ -16,13 +16,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const pages = await getPages(graphql, reporter)
 
   pages.nodes.forEach(page => {
-    createPage({
-      path: page.uri,
-      component: path.resolve('./src/templates/page.js'),
-      context: {
-        id: page.id
-      }
-    })
+    if (page.slug !== 'blog') {
+      createPage({
+        path: page.uri,
+        component: path.resolve('./src/templates/page.js'),
+        context: {
+          id: page.id
+        }
+      })
+    }
   })
 
   posts.edges.forEach(singlePost => {
