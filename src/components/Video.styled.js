@@ -23,7 +23,7 @@ export const BackgroundVideoWrapper = styled.div`
   height: 100%;
   overflow: hidden;
 
-  @media ${device.laptop} {
+  @media (min-width: 768px) {
     max-height: 80vh;
     height: 80vh;
   }
@@ -35,7 +35,7 @@ export const VideoSection = styled.section`
   height: 50vh;
   
 
-  @media ${device.laptop} {
+  @media (min-width: 1024px) {
     max-height: 80vh;
     height: 80vh;
   }
