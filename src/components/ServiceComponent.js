@@ -54,7 +54,7 @@ export default function ServiceComponent({ data }) {
   const titleRef = useRef()
   const textRef = useRef()
   const elementArray = useRef([])
-
+  console.log(servicesRepeater)
   // const windowWidth = useCurrentWidth();
 
   const properties = [
@@ -67,15 +67,16 @@ export default function ServiceComponent({ data }) {
     threshold: 0.1
   })
 
-  useAnimateElement(elementArray.current, properties, headlinesEntry.isIntersecting);
+  // useAnimateElement(elementArray.current, properties, headlinesEntry.isIntersecting);
 
 
   return (
     <section style={{ display: 'flex', flexWrap: 'wrap' }} ref={headlinesRef}>
       <h3 style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>{title}</h3>
+
       <SingleServicesWrapp>
 
-        {servicesRepeater.map((item, index) => <SingleService key={item.title} ref={(element) => elementArray.current[index] = element} className="animated-text">
+        {servicesRepeater.map((item, index) => <SingleService key={item.title} ref={(element) => elementArray.current[index] = element} >
           <SingleItemTitle ref={titleRef}>{item.title}</SingleItemTitle>
           <SingleItemTitleBorder />
           <SingleItemTitleText ref={textRef}>{item.text}</SingleItemTitleText>
