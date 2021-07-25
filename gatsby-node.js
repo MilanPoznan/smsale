@@ -27,19 +27,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   })
 
-  posts.edges.forEach(singlePost => {
-    return createPage({
-      path: singlePost.post.uri,
-      component: path.resolve(`./src/templates/blog-post.js`),
-      context: {
-        id: singlePost.post.id,
-        next: singlePost.next,
-        previous: singlePost.previous
-      }
-    })
-  })
-
-
+  // posts.edges.forEach(singlePost => {
+  //   return createPage({
+  //     path: singlePost.post.uri,
+  //     component: path.resolve(`./src/templates/blog-post.js`),
+  //     context: {
+  //       id: singlePost.post.id,
+  //       next: singlePost.next,
+  //       previous: singlePost.previous
+  //     }
+  //   })
+  // })
 
 }
 
