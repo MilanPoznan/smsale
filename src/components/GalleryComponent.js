@@ -13,7 +13,6 @@ import './slider.scss'
 export default function GalleryComponent({ data }) {
 
   const { galleryImages } = data
-  console.log(galleryImages)
   const [activeSlide, setActiveSlide] = useState(0)
   const [nextSlide, previousSlide, onTouchStart, onTouchMove, onTouchEnd] = useSliderHook(activeSlide, galleryImages, setActiveSlide);
 

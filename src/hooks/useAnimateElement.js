@@ -12,9 +12,6 @@ import { useCurrentWidth } from './useResize'
  */
 const useAnimateElement = (element, cssProperties, entry, delay = 0, isMobileAnimated = true) => {
 
-  console.log(element)
-
-
   const incrementDelay = useRef([])
 
   const [wasAnimated, setWasAnimated] = useState(false)
@@ -39,7 +36,6 @@ const useAnimateElement = (element, cssProperties, entry, delay = 0, isMobileAni
   const applyAllProperties = (element) => {
     if (checkScreenWidth()) {
       cssProperties.forEach((property) => {
-        console.log(element)
         element.style[property[0]] = property[1]
       })
     }

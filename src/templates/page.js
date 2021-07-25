@@ -15,7 +15,7 @@ export default function pageTemplate({ data }) {
   const { pageContent } = nodes[0]
 
   return (
-    <Layout>
+    <Layout menuData={menus}>
       <div className="container def-page">
         {pageContent.pageFlexibleContent.map((item, index) => {
           switch (item.fieldGroupName) {

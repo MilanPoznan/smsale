@@ -4,8 +4,10 @@ import parse from "html-react-parser"
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../global-styles/globalTheme'
 import { SiteWrapper } from '../global-styles/globalComponents'
+import Footer from './Footer'
+import Header from './Header'
 
-const Layout = ({ isHomePage, children }) => {
+const Layout = ({ isHomePage, children, menuData }) => {
   const {
     wp: {
       generalSettings: { title },
@@ -26,22 +28,12 @@ const Layout = ({ isHomePage, children }) => {
       <ThemeProvider theme={theme}>
         <SiteWrapper>
 
-          <header className="global-header">
-            {isHomePage ? (
-              <h1 className="main-heading">
-                <Link to="/">{parse(title)}</Link>
-              </h1>
-            ) : (
-              <Link className="header-link-home" to="/">
-                {title}
-              </Link>
-            )}
-          </header>
+          <Header menuData={menuData} />
 
           <main>{children}</main>
 
         </SiteWrapper>
-
+        <Footer />
       </ThemeProvider>
     </>
   )
