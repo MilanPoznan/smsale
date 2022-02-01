@@ -8,6 +8,7 @@ import TextComponent from '../components/TextComponent'
 import FullImage from '../components/FullImage'
 import ServiceComponent from '../components/ServiceComponent'
 import GalleryComponent from '../components/GalleryComponent'
+import GoogleMapComponent from '../components/GoogleMapComponent'
 
 export default function pageTemplate({ data }) {
 
@@ -33,6 +34,7 @@ export default function pageTemplate({ data }) {
               break;
           }
         })}
+        {/* <GoogleMapComponent /> */}
       </div>
     </Layout>
   )
