@@ -19,7 +19,7 @@ const showElement = keyframes`
 export const BackgroundVideoWrapper = styled.div`
   position: relative;
   max-width: 100vw;
-  max-height: 50vh;
+  max-height: 30vh;
   height: 100%;
   overflow: hidden;
 
@@ -32,7 +32,7 @@ export const BackgroundVideoWrapper = styled.div`
 export const VideoSection = styled.section`
   display: block;
   position: relative;
-  height: 50vh;
+  height: 30vh;
   
 
   @media (min-width: 1024px) {

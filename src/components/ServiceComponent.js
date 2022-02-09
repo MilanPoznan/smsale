@@ -74,10 +74,10 @@ export default function ServiceComponent({ data }) {
 
 
   return (
-    <section style={{ display: 'flex', flexWrap: 'wrap' }} ref={ref}>
+    <section style={{ display: 'flex', flexWrap: 'wrap' }} ref={ref} id="usluge">
       <h3 style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>{title}</h3>
 
-      <SingleServicesWrapp>
+      <SingleServicesWrapp >
 
         {servicesRepeater.map((item, index) => <SingleService isInView={entry.isIntersecting} key={item.title} ref={(element) => elementArray.current[index] = element} >
           <SingleItemTitle ref={titleRef}>{item.title}</SingleItemTitle>

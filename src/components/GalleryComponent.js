@@ -17,7 +17,7 @@ export default function GalleryComponent({ data }) {
   const [nextSlide, previousSlide, onTouchStart, onTouchMove, onTouchEnd] = useSliderHook(activeSlide, galleryImages, setActiveSlide);
 
   return (
-    <div className={'slider case-studies'} >
+    <div className={'slider case-studies'} id="galerija">
       <div className={`slider__arrow slider__arrow--left ${activeSlide === 0 ? 'slider__arrow--inactive' : null}`}
         onClick={previousSlide}
         onKeyPress={(e) => e.charCode === 32 ? previousSlide : null}

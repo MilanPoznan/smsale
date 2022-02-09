@@ -28,7 +28,7 @@ export default function TextComponent({ data }) {
   }, [entry.isIntersecting])
 
   return (
-    <TextComponentSection isInView={shouldAnimated} ref={ref}>
+    <TextComponentSection isInView={shouldAnimated} ref={ref} id="about">
       <h1 className="animated-title">{data.title}</h1>
       <div ref={element} className="animated-text" dangerouslySetInnerHTML={{ __html: data.text }} />
     </TextComponentSection>
