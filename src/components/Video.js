@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { BgOverlay, BackgroundVideo, LogoContainer, AnimatedBGContainer, VideoSection, BackgroundVideoWrapper } from './Video.styled'
 
 export default function Video({ data }) {
   const { video: { localFile: { publicURL } } } = data
+
+  const videoElement = useRef()
+
+  useEffect(() => {
+    console.log(videoElement.current.play())
+  }, [])
   return (
     <VideoSection>
       <BackgroundVideoWrapper>
@@ -15,10 +21,11 @@ export default function Video({ data }) {
           style={{
 
           }}
+          ref={videoElement}
           src={publicURL}
         >
           <source src={publicURL} type="video/mp4" />
-            Your device does not support playing 'video/mp4' videos
+          Your device does not support playing 'video/mp4' videos
         </BackgroundVideo>
       </BackgroundVideoWrapper>
       <LogoContainer> SM SALE</LogoContainer>
