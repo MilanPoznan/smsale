@@ -26,10 +26,10 @@ export default function Video({ data }) {
           <source src={publicURL} type="video/mp4" />
           Your device does not support playing 'video/mp4' videos
         </BackgroundVideo>
-        <HiddenPlayButton ref={hiddenButton} onClick={() => videoElement.current.play()}>Play</HiddenPlayButton>
 
       </BackgroundVideoWrapper>
       <LogoContainer> SM SALE</LogoContainer>
+      <HiddenPlayButton ref={hiddenButton} onClick={() => console.log('test')}>Play</HiddenPlayButton>
     </VideoSection >
   )
 }
