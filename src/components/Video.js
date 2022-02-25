@@ -18,6 +18,7 @@ export default function Video({ data }) {
         <BgOverlay />
         <BackgroundVideo
           autoPlay
+          preload='none'
           muted
           loop
           ref={videoElement}
