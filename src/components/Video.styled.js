@@ -45,8 +45,10 @@ export const PlayButtonBorder = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 1111;
   border: 2px solid #FFB408;
+  opacity: 0;
+  animation: ${showElement} 1.8s 2s forwards;
   /* Chrome version 29 and above */
   @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
     display: none;

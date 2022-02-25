@@ -12,7 +12,9 @@ export default function Video({ data }) {
   }, [])
   return (
     <VideoSection>
-      <PlayButtonBorder onClick={() => videoElement.current.play()}>
+      <PlayButtonBorder onClick={() => {
+        videoElement.current.play()
+      }}>
         <PlayButton />
       </PlayButtonBorder>
 
