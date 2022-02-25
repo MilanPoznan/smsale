@@ -32,7 +32,41 @@ export const BackgroundVideoWrapper = styled.div`
 
 export const HiddenPlayButton = styled.button`
 opacity: 1;
-z-index: 1111;
+
+`
+
+export const PlayButtonBorder = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 1;
+  border: 2px solid #FFB408;
+  /* Chrome version 29 and above */
+  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
+export const PlayButton = styled.div`
+  width: 0; 
+  height: 0; 
+  border-style: solid;
+  border-width: 0 20px 25px 20px;
+  transform: rotate(90deg);
+  border-color: transparent transparent #FFB408 transparent;
+  left: 4px;
+  position: relative;
+  z-index: 1111;
+ 
 `
 export const VideoSection = styled.section`
   display: block;

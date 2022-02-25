@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { HiddenPlayButton, BgOverlay, BackgroundVideo, LogoContainer, AnimatedBGContainer, VideoSection, BackgroundVideoWrapper } from './Video.styled'
+import { PlayButton, PlayButtonBorder, HiddenPlayButton, BgOverlay, BackgroundVideo, LogoContainer, AnimatedBGContainer, VideoSection, BackgroundVideoWrapper } from './Video.styled'
 
 export default function Video({ data }) {
   const { video: { localFile: { publicURL } } } = data
@@ -8,10 +8,14 @@ export default function Video({ data }) {
   const hiddenButton = useRef()
   useEffect(() => {
     videoElement.current.play();
-    hiddenButton.current.click()
+    // hiddenButton.current.click()
   }, [])
   return (
     <VideoSection>
+      <PlayButtonBorder onClick={() => videoElement.current.play()}>
+        <PlayButton />
+      </PlayButtonBorder>
+
       <BackgroundVideoWrapper>
         <AnimatedBGContainer />
         <BgOverlay />
@@ -30,11 +34,7 @@ export default function Video({ data }) {
 
       </BackgroundVideoWrapper>
       <LogoContainer> SM SALE</LogoContainer>
-      <HiddenPlayButton ref={hiddenButton} onClick={() => {
-        console.log('test')
-        videoElement.current.play();
 
-      }}>Play</HiddenPlayButton>
     </VideoSection >
   )
 }
