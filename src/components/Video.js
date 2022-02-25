@@ -17,9 +17,10 @@ export default function Video({ data }) {
         <BgOverlay />
         <BackgroundVideo
           autoPlay
-          preload='none'
+          playsinline
           muted
           loop
+          type='video/mp4'
           ref={videoElement}
           src={publicURL}
         >
