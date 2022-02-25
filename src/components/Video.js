@@ -29,7 +29,11 @@ export default function Video({ data }) {
 
       </BackgroundVideoWrapper>
       <LogoContainer> SM SALE</LogoContainer>
-      <HiddenPlayButton ref={hiddenButton} onClick={() => console.log('test')}>Play</HiddenPlayButton>
+      <HiddenPlayButton ref={hiddenButton} onClick={() => {
+        console.log('test')
+        videoElement.current.play();
+
+      }}>Play</HiddenPlayButton>
     </VideoSection >
   )
 }
