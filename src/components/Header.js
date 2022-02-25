@@ -9,10 +9,9 @@ export default function Header({ menuData }) {
 
   const [isOpen, setisOpen] = useState(false)
   const { menuItems: { nodes } } = menuData[0]
-  console.log(<Logo />)
+
 
   return (
-
     <HeaderWrapper isOpen={isOpen}>
 
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 95">

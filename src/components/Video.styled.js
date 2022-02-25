@@ -29,6 +29,10 @@ export const BackgroundVideoWrapper = styled.div`
   }
 
 `
+
+export const HiddenPlayButton = styled.button`
+opacity: 0;
+`
 export const VideoSection = styled.section`
   display: block;
   position: relative;
