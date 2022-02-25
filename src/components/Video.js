@@ -7,9 +7,8 @@ export default function Video({ data }) {
   const videoElement = useRef()
   const hiddenButton = useRef()
   useEffect(() => {
-    console.log(videoElement.current)
     videoElement.current.play();
-    // hiddenButton.click()
+    hiddenButton.current.click()
   }, [])
   return (
     <VideoSection>
@@ -27,7 +26,7 @@ export default function Video({ data }) {
           <source src={publicURL} type="video/mp4" />
           Your device does not support playing 'video/mp4' videos
         </BackgroundVideo>
-        <HiddenPlayButton ref={hiddenButton} onClick={() => videoElement.current.play()}></HiddenPlayButton>
+        <HiddenPlayButton ref={hiddenButton} onClick={() => videoElement.current.play()}>Play</HiddenPlayButton>
 
       </BackgroundVideoWrapper>
       <LogoContainer> SM SALE</LogoContainer>

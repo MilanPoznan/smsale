@@ -31,7 +31,7 @@ export const BackgroundVideoWrapper = styled.div`
 `
 
 export const HiddenPlayButton = styled.button`
-opacity: 0;
+opacity: 1;
 `
 export const VideoSection = styled.section`
   display: block;
